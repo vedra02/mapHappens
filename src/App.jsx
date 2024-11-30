@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Header />
       <Sidebar />
-      <main className='pl-28 pt-28'>
+      <main className='md:pl-28 pl-4 md:pt-28 pt-20 md:p-6 p-4'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/routes' element={<RoutePage />} />

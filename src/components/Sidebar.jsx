@@ -4,9 +4,9 @@ import { useLocation, Link } from 'react-router-dom'
 const Sidebar = () => {
   const { pathname } = useLocation()
   return (
-    <div className='fixed h-full p-3 w-full max-w-[5.5rem]'>
+    <div className='hidden md:block fixed h-full p-3 w-full max-w-[5.5rem]'>
       <div className='h-full pt-[4.5rem]'>
-        <div className='flex flex-col justify-between py-2 items-center bg-white border border-indigo-200/80 rounded-xl h-full'>
+        <div className='flex flex-col justify-between gap-2 py-2 items-center bg-white border border-indigo-200/80 rounded-xl h-full'>
           {/* Navigation buttons */}
           <ul className='space-y-2'>
             {[
