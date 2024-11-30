@@ -2,9 +2,10 @@ import React from 'react'
 
 const Routes = () => {
   return (
-    <div>
-      Routes Page
-    </div>
+    <section>
+      <h3 className='leading-none'>Route Page</h3>
+      <p>Route page content goes here!!!!</p>
+    </section>
   )
 }
 

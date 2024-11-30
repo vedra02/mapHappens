@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <div className='fixed w-full'>
+    <div className='fixed w-full bg-[#fbfcff]'>
       <div className='flex justify-between items-center p-3 pr-6'>
         {/* Logo Placeholder */}
         <div className='flex items-center gap-3'>
@@ -21,7 +21,7 @@ const Header = () => {
               {/*  */}
             </div>
           </div>
-          <span>/</span>
+          <span className='text-indigo-400/30'>/</span>
           <div className='text-center text-xs leading-none w-full max-w-[7rem]'>You are currently browsing as <span className='font-semibold'>Guest</span></div>
         </div>
         {/* Actions Buttons */}

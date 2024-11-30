@@ -2,9 +2,10 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-      Home Page
-    </div>
+    <section>
+      <h3 className='leading-none'>Home Page</h3>
+      <p>Home page content goes here!!!!</p>
+    </section>
   )
 }
 
