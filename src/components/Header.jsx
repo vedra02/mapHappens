@@ -113,8 +113,22 @@ const Header = () => {
             <h3>TourEase</h3>
           </div>
         </div>
+        {/* WEB: Middle content */}
+        <div className='hidden md:flex items-center gap-2 border border-indigo-300/40 rounded-full p-1 pr-4'>
+          {/* Avatar & Name */}
+          <div>
+            <div className='flex items-center gap-2 pr-4 p-1 rounded-full bg-indigo-200/50'>
+              <div className='flex items-center justify-center size-8 rounded-full bg-indigo-500'>
+                <span className='text-white text-sm'>G</span>
+              </div>
+              <p className='leading-none text-indigo-500 font-semibold'>Guest</p>
+            </div>
+          </div>
+          <span className='text-indigo-400/30'>/</span>
+          <div className='text-center text-xs leading-none w-full max-w-[7rem]'>You are currently browsing as <span className='font-semibold'>Guest</span></div>
+        </div>
         {/* MOB: User dropdown */}
-        <div className='relative' ref={userDropdownRef}>
+        <div className='md:hidden block relative' ref={userDropdownRef}>
           <button onClick={toggleUserDropdown} className='md:hidden p-1 rounded-full bg-indigo-200/50 user-button'>
             <div className='flex items-center justify-center size-8 rounded-full bg-indigo-500'>
               <span className='text-white text-sm'>G</span>
@@ -136,6 +150,11 @@ const Header = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* WEB: Actions Buttons */}
+        <div className='hidden md:flex items-center gap-3' >
+          <button className='px-3.5 py-2 rounded-lg bg-indigo-100/80 text-indigo-500 text-sm font-medium'>Login</button>
+          <button className='px-3.5 py-2 rounded-lg bg-indigo-500 text-white text-sm'>Sign up</button>
         </div>
       </div>
     </div>
