@@ -1,6 +1,6 @@
 import React from 'react'
 import { Home, RoutePage, About, Feedback } from './pages'
-import { Sidebar, Header } from './components'
+import { Sidebar, Header, } from './components'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
