@@ -110,7 +110,7 @@ const Header = () => {
           {/* Logo Placeholder */}
           <div className='flex items-center gap-3'>
             <div className='md:size-[3.8rem] size-[2.5rem] bg-indigo-500 md:rounded-xl rounded-lg'></div>
-            <h3>TourEase</h3>
+            <h3>mapHappens</h3>
           </div>
         </div>
         {/* WEB: Middle content */}
