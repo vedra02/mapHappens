@@ -1,5 +1,6 @@
 import React from 'react';
 import images from '../assets/images'; // Single import for all images
+import { Link } from 'react-router-dom';
 
 const Routes = () => {
   return (
@@ -10,9 +11,11 @@ const Routes = () => {
         <h6 className="text-xl font-semibold">Details</h6>
         
         {/* Post Button */}
-        <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
+             <Link to="/posting">
+        <button className="bg-indigo-500 text-white px-4 py-0.5 rounded hover:bg-indigo-500 focus:outline-none focus:ring focus:ring-indigo-400">
           Post
         </button>
+      </Link>
       </div>
 
       {/* Details Section */}

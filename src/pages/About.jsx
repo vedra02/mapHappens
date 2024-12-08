@@ -8,7 +8,7 @@ const About = () => {
         <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
         <h1 className="text-4xl font-bold text-gray-800">
           Your Travel, Your Way, it's{" "}
-          <span className="text-blue-600">TourEase!!</span>
+          <span className="text-blue-600">mapHappens!!</span>
         </h1>
         <p className="mt-2 text-gray-600">Founded by</p>
         <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>

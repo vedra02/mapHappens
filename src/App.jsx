@@ -1,10 +1,12 @@
 import React from 'react'
-import { Home, RoutePage, About, Feedback, } from './pages'
+import { Home, RoutePage, About, Feedback,  } from './pages'
 import { Sidebar, Header, AdminSidebar, AdminHeader} from './components'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Posting from './pages/Posting'
 import AddRouteSuggest from './pages/AddRouteSuggest'
+import RouteSuggestion from './pages/RouteSuggestion'
+import AdminFeedback from './pages/AdminFeedback'
 
 const App = () => {
 const { pathname } = useLocation();
@@ -24,6 +26,8 @@ const { pathname } = useLocation();
           <Route path='/Dashboard' element={<Dashboard />} />
           <Route path='/Posting' element={<Posting />} />
           <Route path='/AddRouteSuggest' element={<AddRouteSuggest />} />
+          <Route path= '/RouteSuggestion' element={<RouteSuggestion />} />
+          <Route path= '/AdminFeedback' element={<AdminFeedback />} />
         </Routes>
       </main>
       

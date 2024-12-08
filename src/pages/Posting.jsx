@@ -1,10 +1,30 @@
 import React, { useState } from "react";
 import { FaBus, FaCarSide, FaCarAlt, FaTrain, FaTaxi } from "react-icons/fa"; // Import the necessary icons
+import { useNavigate } from "react-router-dom"; // For navigation
 
 const TravelInfoPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [location, setLocation] = useState("");
   const [destination, setDestination] = useState("");
   const [fare, setFare] = useState("");
+  const [experience, setExperience] = useState("");
+  const [selectedMode, setSelectedMode] = useState(""); // Track the selected transportation mode
+
+  const handleSubmit = () => {
+    const routeDetails = {
+      location,
+      destination,
+      fare,
+      experience,
+      mode: selectedMode,
+    };
+
+    // Log or submit form data
+    console.log("Form submitted:", routeDetails);
+
+    // Navigate to RouteSuggestion with state
+    navigate("/route-suggestion", { state: { routeDetails } });
+  };
 
   return (
     <div className="bg-gray-100 font-sans p-6 min-h-screen flex items-center justify-center">
@@ -17,9 +37,7 @@ const TravelInfoPage = () => {
             </div>
           </div>
           <div>
-            <h1 className="text-xl font-medium text-gray-700">
-              Joanah Marie Aldave
-            </h1>
+            <h1 className="text-xl font-medium text-gray-700">Joanah Marie Aldave</h1>
             <p className="text-gray-500">@jmaldave</p>
           </div>
         </header>
@@ -29,10 +47,7 @@ const TravelInfoPage = () => {
           {/* Location Section */}
           <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div>
-              <label
-                htmlFor="location"
-                className="block text-gray-500 text-sm mb-2"
-              >
+              <label htmlFor="location" className="block text-gray-500 text-sm mb-2">
                 Location
               </label>
               <input
@@ -45,10 +60,7 @@ const TravelInfoPage = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="destination"
-                className="block text-gray-500 text-sm mb-2"
-              >
+              <label htmlFor="destination" className="block text-gray-500 text-sm mb-2">
                 Destination
               </label>
               <input
@@ -82,25 +94,15 @@ const TravelInfoPage = () => {
             {["Jeep", "E-Jeep", "Bus", "Train", "UV Express"].map((mode) => (
               <button
                 key={mode}
-                className="flex flex-col items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-500 rounded-lg text-sm hover:bg-indigo-200"
+                className={`flex flex-col items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-500 rounded-lg text-sm hover:bg-indigo-200 ${selectedMode === mode ? 'bg-indigo-300' : ''}`}
+                onClick={() => setSelectedMode(mode)} // Update selected mode
               >
                 {/* Icons for different modes */}
-                {mode === "Jeep" && (
-                  <FaCarSide className="w-8 h-8 mb-2" /> // Jeep icon
-                )}
-                {/* Icons for different modes */}
-                {mode === "E-Jeep" && (
-                  <FaCarAlt className="w-8 h-8 mb-2" /> // Jeep icon
-                )}
-                {mode === "Bus" && (
-                  <FaBus className="w-8 h-8 mb-2" /> // Bus icon
-                )}
-                {mode === "Train" && (
-                  <FaTrain className="w-8 h-8 mb-2" /> // Train icon
-                )}
-                 {mode === "UV Express" && (
-                  <FaTaxi className="w-8 h-8 mb-2" /> // Train icon
-                )}
+                {mode === "Jeep" && <FaCarSide className="w-8 h-8 mb-2" />}
+                {mode === "E-Jeep" && <FaCarAlt className="w-8 h-8 mb-2" />}
+                {mode === "Bus" && <FaBus className="w-8 h-8 mb-2" />}
+                {mode === "Train" && <FaTrain className="w-8 h-8 mb-2" />}
+                {mode === "UV Express" && <FaTaxi className="w-8 h-8 mb-2" />}
                 <span>{mode}</span>
               </button>
             ))}
@@ -108,10 +110,7 @@ const TravelInfoPage = () => {
 
           {/* Route Overview */}
           <section className="mb-6">
-            <label
-              htmlFor="route"
-              className="block text-gray-500 text-sm mb-2"
-            >
+            <label htmlFor="route" className="block text-gray-500 text-sm mb-2">
               Route Overview
             </label>
             <div className="flex items-center gap-2">
@@ -140,16 +139,15 @@ const TravelInfoPage = () => {
 
           {/* Experiences */}
           <section className="mb-6">
-            <label
-              htmlFor="experience"
-              className="block text-gray-500 text-sm mb-2"
-            >
+            <label htmlFor="experience" className="block text-gray-500 text-sm mb-2">
               Your Experiences
             </label>
             <textarea
               id="experience"
               placeholder="E.g. We started our journey at the Intramuros gates, aiming to explore the historic walled city..."
               rows="4"
+              value={experience}
+              onChange={(e) => setExperience(e.target.value)}
               className="w-full border border-gray-300 rounded-md p-3 text-gray-700 bg-[#E0E7FF] focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </section>
@@ -157,10 +155,18 @@ const TravelInfoPage = () => {
 
         {/* Footer */}
         <footer className="flex justify-end gap-4">
-          <button className="bg-gray-200 text-gray-600 px-6 py-3 rounded-md hover:bg-gray-300">
+          {/* Cancel Button */}
+          <button
+            className="bg-gray-200 text-gray-600 px-6 py-3 rounded-md hover:bg-gray-300"
+            onClick={() => navigate("/RouteSuggestion")} // Go back to RouteSuggestion page
+          >
             Cancel
           </button>
-          <button className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600">
+          {/* Submit Button */}
+          <button
+            className="bg-green-500 text-white px-6 py-3 rounded-md hover:bg-green-600"
+            onClick={handleSubmit} // Submit form data
+          >
             Submit
           </button>
         </footer>
