@@ -1,142 +1,64 @@
-import React from "react";
+import React from 'react';
+import { FaUsers, FaComments } from 'react-icons/fa'; // Icons for Users and Feedback
+import { IoMdSearch } from 'react-icons/io'; // Updated Search Icon
 
-const About = () => {
+const Dashboard = () => {
   return (
-    <section className="bg-gray-50 min-h-screen">
+    <div className="flex flex-col px-6 py-8 bg-[#F9FAFB] min-h-screen">
       {/* Header Section */}
-      <header className="text-center py-10 bg-white shadow-md">
-        <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-        <h1 className="text-4xl font-bold text-gray-800">
-          Your Travel, Your Way, it's{" "}
-          <span className="text-blue-600">mapHappens!!</span>
+      <div className="mb-6">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-800">
+          Welcome, Admin! amutoooo
         </h1>
-        <p className="mt-2 text-gray-600">Founded by</p>
-        <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-        <h4 className="mt-1 text-2xl text-blue-500 font-semibold">Group Name</h4>
-        <p className="text-sm text-gray-500">CCS IT-3 Students</p>
-      </header>
-
-      {/* About Section */}
-      <div className="text-center py-10 px-5">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">
-          TourEase: Your Ultimate Metro Companion
-        </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Say goodbye to stress and confusion with TourEase, your go-to tool
-          for hassle-free commuting. Whether you're a daily commuter or an
-          occasional traveler, TourEase simplifies your journey by offering
-          curated routes, reliable schedules, and real-time updates. Navigate
-          with ease and confidence and make every trip enjoyable. Experience a
-          metro system that revolves around YOU.
+        <p className="text-sm text-gray-500 mt-1">
+          Here's an overview of TourEase Dashboard: Monitor user activity and feedbacks
         </p>
       </div>
 
-      {/* Team Section */}
-      <div className="py-10 bg-[#E0E7FF]">
-        <h2 className="text-center text-3xl font-bold text-gray-800 mb-8">
-          Meet Our Talented Team
-        </h2>
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Top Row with First Two Members */}
-          <div className="grid grid-cols-2 gap-8 mb-8">
-            <div className="flex flex-col justify-center items-center text-center col-span-1">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Johana Eunice Abellana
-              </h4>
-              <p className="text-sm text-gray-500">
-                Project Manager <br /> Head Researcher
-              </p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center col-span-1">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Joanah Marie L. Aldave
-              </h4>
-              <p className="text-sm text-gray-500">
-                Assistant Project Manager <br /> UI/UX Designer <br /> Head
-                Researcher
-              </p>
-            </div>
+      {/* Dashboard Stats Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+        {/* Card for Users */}
+        <div className="bg-white p-6 rounded-xl shadow-md flex items-center justify-between">
+          <div>
+            <h3 className="text-[#6366F1] text-lg font-medium">Users</h3>
+            <p className="text-4xl font-bold text-gray-800 mt-2">4,300</p>
           </div>
+          <FaUsers className="text-[#6366F1] text-4xl" />
+        </div>
 
-          {/* Grid for Remaining Members */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Gabriel Q. Bruzula
-              </h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">Gerson A. Boyboy</h4>
-              <p className="text-sm text-gray-500">
-                UI/UX Designer <br /> Researcher
-              </p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Marc Jerald B. De Guzman
-              </h4>
-              <p className="text-sm text-gray-500">Researcher</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Sean Zidane L. Dumlao
-              </h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Icko Cristian M. Llanillo
-              </h4>
-              <p className="text-sm text-gray-500">Researcher</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Patricia Mae R. Romillo
-              </h4>
-              <p className="text-sm text-gray-500">
-                UI/UX Designer <br /> Researcher
-              </p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">Ashley A. Ruaza</h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                John Paul J. Saavedra
-              </h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                John Cedric G. Salinas
-              </h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <div className="w-20 h-20 bg-blue-200 rounded-full mb-4 mx-auto"></div>
-              <h4 className="font-semibold text-gray-800">
-                Joshua Emmanuel P. Valeza
-              </h4>
-              <p className="text-sm text-gray-500">Programmer</p>
-            </div>
+        {/* Card for Feedbacks */}
+        <div className="bg-white p-6 rounded-xl shadow-md flex items-center justify-between">
+          <div>
+            <h3 className="text-[#6366F1] text-lg font-medium">Feedbacks</h3>
+            <p className="text-4xl font-bold text-gray-800 mt-2">4,300</p>
           </div>
+          <FaComments className="text-[#6366F1] text-4xl" />
         </div>
       </div>
-    </section>
+
+      {/* Registered Accounts Section */}
+      <div>
+        <h3 className="text-lg font-semibold text-gray-800 mb-4">Registered Accounts</h3>
+        
+        {/* Search Bar */}
+        <div className="flex justify-end items-center mb-4">
+          <div className="relative w-72">
+            <input
+              type="text"
+              placeholder="Search for registered account"
+              className="p-2 pl-3 pr-10 border border-gray-300 rounded-lg w-full"
+            />
+            <IoMdSearch className="absolute right-3 top-2 text-white bg-blue-600 p-2 rounded-full" />
+          </div>
+        </div>
+        
+        <div className="bg-gray-200 p-4 rounded-lg">
+          {/* Display registered accounts */}
+          <p className="text-gray-500">No accounts to display here yet.</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default About;
+export default Dashboard;
