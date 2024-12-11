@@ -4,9 +4,10 @@ import { Sidebar, Header, AdminSidebar, AdminHeader} from './components'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import Posting from './pages/Posting'
-import AddRouteSuggest from './pages/AddRouteSuggest'
 import RouteSuggestion from './pages/RouteSuggestion'
 import AdminFeedback from './pages/AdminFeedback'
+import AddRoutes from './pages/AddRoutes'
+
 
 const App = () => {
 const { pathname } = useLocation();
@@ -25,9 +26,9 @@ const { pathname } = useLocation();
           <Route path='/feedback' element={<Feedback />} />
           <Route path='/Dashboard' element={<Dashboard />} />
           <Route path='/Posting' element={<Posting />} />
-          <Route path='/AddRouteSuggest' element={<AddRouteSuggest />} />
           <Route path= '/RouteSuggestion' element={<RouteSuggestion />} />
           <Route path= '/AdminFeedback' element={<AdminFeedback />} />
+          <Route path= '/AddRoutes' element={<AddRoutes />} />
         </Routes>
       </main>
       

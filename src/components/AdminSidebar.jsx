@@ -19,7 +19,7 @@ const AdminSidebar = () => {
               // Add Routes
               {
                 icon: 'M12 3v18m9-9H3',
-                path: '/location',
+                path: '/AddRoutes',
               },
               // Feedback
               {
